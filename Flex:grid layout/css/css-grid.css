@@ -1,0 +1,235 @@
+/*
+---GRID---
+Instructions
+All CSS declarations and media queries in this
+file should strictly target the "grid" div and
+its content in the layout.html file.
+
+You're limited to the below stated:
+--------------------------
+Mandatory declaration
+¤ display: grid;                            | Only grid
+--------------------------
+Permitted media queries
+¤ @media screen and (min-width: 768px) {    |
+¤ @media screen and (min-width: 1024px) {   |
+--------------------------
+Permitted properties
+¤ display                                   | Only grid
+¤ border-radius                             |
+¤ font-weight                               |
+¤ grid-column                               |
+¤ grid-gap                                  |
+¤ grid-row                                  |
+¤ grid-template-columns                     |
+¤ grid-template-rows                        |
+¤ order                                     |
+¤ place-content                             |
+--------------------------
+
+Student CSS below the line
+-------------------------- */
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+
+}
+
+.grid div {
+    border-radius: 0.3125rem;
+    place-content: center;
+}
+
+.grid>div:nth-child(1)>p,
+.grid>div:nth-child(4)>p,
+.grid>div:nth-child(6)>p {
+    font-weight: bold;
+
+}
+
+
+.grid>div:nth-child(1),
+.grid>div:nth-child(4),
+.grid>div:nth-child(8),
+.grid>div:nth-child(6) {
+    grid-column: 1 / -1;
+
+}
+
+.grid>div:nth-child(6) {
+    order: 12;
+
+}
+
+/* Media Query for wider screens (min-width: 768px) */
+@media screen and (min-width: 768px) {
+
+
+
+    .grid {
+        display: grid;
+        grid-template-columns: 2fr 3fr 1fr 5fr;
+        grid-template-rows: 4rem 7rem 6rem 5rem 3.5rem;
+
+        grid-gap: 1rem;
+
+    }
+
+
+
+
+    .grid>div {
+        border-radius: 0.5rem;
+
+        display: grid;
+        place-content: center;
+
+    }
+
+
+    .grid>div:nth-child(1) {
+
+        grid-column: 2 / 2;
+        grid-row: 3;
+    }
+
+    .grid>div:nth-child(2) {
+
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .grid>div:nth-child(3) {
+
+        grid-column: 4 /6;
+        grid-row: 1;
+    }
+
+    .grid>div:nth-child(4) {
+
+        grid-column: 1 / 3;
+        grid-row: 1 / span 2;
+    }
+
+    .grid>div:nth-child(5) {
+
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .grid>div:nth-child(6) {
+
+        grid-column: 4 / 6;
+        grid-row: 3 / span 3;
+    }
+
+    .grid>div:nth-child(7) {
+        grid-column: 3;
+        grid-row: 3 / span 3;
+    }
+
+    .grid>div:nth-child(8) {
+
+        grid-column: 1 / span 2;
+        grid-row: 5;
+    }
+
+    .grid>div:nth-child(9) {
+
+        grid-column: 1 / span 2;
+        grid-row: 4;
+    }
+
+    .grid>div:nth-child(10) {
+
+        grid-column: span 3;
+        grid-row: 2;
+    }
+
+
+}
+
+/* Media Query for wider screens (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+
+
+    .grid {
+        display: grid;
+        grid-template-columns: 3fr 3fr 1fr 1.5fr 6fr;
+        grid-template-rows: 5rem 7rem 6rem 5rem 2rem;
+        grid-gap: 1rem;
+
+    }
+
+    .grid>div {
+        display: grid;
+        border-radius: 0.5rem;
+        font-weight: lighter;
+        place-content: center;
+
+    }
+
+
+
+    .grid>div:nth-child(1) {
+        grid-column: 2 / 4;
+        grid-row: 3;
+
+
+    }
+
+    .grid>div:nth-child(2) {
+        grid-column: 4;
+        grid-row: 1;
+
+    }
+
+    .grid>div:nth-child(3) {
+        grid-column: 5 / 9;
+        grid-row: 1;
+    }
+
+    .grid>div:nth-child(4) {
+        grid-column: 5 /span 4;
+        grid-row: 3/ span 5;
+        order: 1;
+        border-radius: 17rem 0rem 0rem 0rem;
+        order: 6;
+    }
+
+    .grid>div:nth-child(5) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .grid>div:nth-child(6) {
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 2;
+        border-radius: 0rem 0rem 20rem 0rem;
+
+    }
+
+    .grid>div:nth-child(7) {
+        grid-column: 4;
+        grid-row: 3 / span 5;
+    }
+
+    .grid>div:nth-child(8) {
+        grid-column: 1 / span 3;
+        grid-row: 5;
+    }
+
+    .grid>div:nth-child(9) {
+        grid-column: 1 / span 3;
+        grid-row: 4;
+    }
+
+    .grid>div:nth-child(10) {
+        grid-column: 4 / span 5;
+        grid-row: 2 / span 1;
+
+    }
+}

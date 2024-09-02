@@ -1,0 +1,284 @@
+/*
+---GRID-AREA---
+Instructions
+All CSS declarations and media queries in this
+file should strictly target the "grid-area" div
+and its content in the layout.html file.
+
+You're limited to the below stated:
+--------------------------
+Mandatory declaration
+¤ display: grid;                            | Only grid
+--------------------------
+Permitted media queries
+¤ @media screen and (min-width: 768px) {    |
+¤ @media screen and (min-width: 1024px) {   |
+--------------------------
+Permitted properties
+¤ display                                   | Only grid
+¤ border-radius                             |
+¤ font-weight                               |
+¤ grid-area                                 |
+¤ grid-gap                                  |
+¤ grid-template-areas                       |
+¤ grid-template-columns                     |
+¤ place-content                             |
+--------------------------
+
+Student CSS below the line
+-------------------------- */
+
+.grid-area {
+    display: grid;
+    place-content: center;
+    grid-gap: 1rem;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-areas:
+        "item1 item2"
+        "item3 item4"
+        "item5 item6"
+        "item7 item8"
+        "item9 item10";
+
+
+
+}
+
+.grid-area>div {
+    display: grid;
+    place-content: center;
+}
+
+.grid-area>div:nth-child(1) {
+    grid-area: item1;
+
+
+}
+
+.grid-area>div:nth-child(2) {
+
+    grid-area: item2;
+}
+
+.grid-area>div:nth-child(3) {
+    grid-area: item3;
+}
+
+.grid-area>div:nth-child(4) {
+    grid-area: item4;
+}
+
+.grid-area>div:nth-child(5) {
+    grid-area: item5;
+}
+
+.grid-area>div:nth-child(6) {
+    grid-area: item6;
+
+}
+
+.grid-area>div:nth-child(7) {
+    grid-area: item7;
+}
+
+.grid-area>div:nth-child(8) {
+    grid-area: item8;
+}
+
+.grid-area>div:nth-child(9) {
+    grid-area: item9;
+}
+
+.grid-area>div:nth-child(10) {
+    grid-area: item10;
+}
+
+
+.grid-area>div {
+    border-radius: 0.5rem;
+
+
+}
+
+
+.grid-area>div:nth-child(1)>p,
+.grid-area>div:nth-child(4)>p,
+.grid-area>div:nth-child(6)>P {
+    font-weight: bold;
+
+
+}
+
+
+
+/* Media Query for wider screens (min-width: 768px) */
+@media screen and (min-width: 768px) {
+
+
+    .grid-area {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+
+        grid-template-areas:
+
+            "item4 item5 item3 "
+            "item2 item1 item1"
+            "item8 item6 item6"
+            "item9  item6 item6"
+            "item10 item10 item7";
+    }
+
+    .grid-area div p {
+        place-content: center;
+    }
+
+    .grid-area:nth-child(1) {
+        grid-area: item1;
+    }
+
+
+
+    .grid-area:nth-child(2) {
+        grid-area: item2;
+    }
+
+
+
+
+    .grid-area:nth-child(3) {
+        grid-area: item3;
+    }
+
+    .grid-area:nth-child(4) {
+        grid-area: item4;
+    }
+
+
+    .grid-area:nth-child(5) {
+        grid-area: item5;
+    }
+
+    .grid-area:nth-child(6) {
+        grid-area: item6;
+
+    }
+
+    .grid-area:nth-child(7) {
+        grid-area: item7;
+    }
+
+    .grid-area:nth-child(8) {
+        grid-area: item8;
+    }
+
+    .grid-area:nth-child(9) {
+
+
+        grid-area: item9;
+    }
+
+    .grid-arean:nth-child(10) {
+        grid-area: item10;
+    }
+
+
+
+
+}
+
+
+
+/* Media Query for wider screens (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+
+
+    .grid-area {
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr 2fr;
+        grid-gap: 1rem;
+        place-content: center;
+        grid-template-areas:
+            "three grid-area five"
+            "two grid-area seven"
+            "eight nine you"
+            "ten know know";
+    }
+
+
+    .grid-area>div:nth-child(1) {
+        grid-area: you;
+    }
+
+    .grid-area>div:nth-child(2) {
+        grid-area: two;
+    }
+
+    .grid-area>div:nth-child(3) {
+        grid-area: three;
+    }
+
+    .grid-area>div:nth-child(4) {
+        grid-area: know;
+    }
+
+    .grid-area>div:nth-child(5) {
+        grid-area: five;
+    }
+
+    .grid-area>div:nth-child(6) {
+        grid-area: grid-area;
+    }
+
+    .grid-area>div:nth-child(7) {
+        grid-area: seven;
+    }
+
+    .grid-area>div:nth-child(8) {
+        grid-area: eight;
+    }
+
+    .grid-area>div:nth-child(9) {
+        grid-area: nine;
+    }
+
+    .grid-area>div:nth-child(10) {
+        grid-area: ten;
+    }
+
+
+    .grid-area>div:nth-child(3) {
+        grid-area: 1 / 1;
+        border-radius: 10rem 0rem 0rem;
+    }
+
+    .grid-area>div:nth-child(4) {
+        grid-area: 4 / 2 / 5 / 5;
+        border-radius: 0rem 0rem 10rem;
+
+    }
+
+    .grid-area>div:nth-child(1) {
+        grid-area: 3 / span 2;
+    }
+
+    .grid-area>div:nth-child(5) {
+        grid-area: 1/4;
+    }
+
+
+    .grid-area>div:nth-child(7) {
+        grid-area: 2/4;
+    }
+
+
+    .grid-area>div:nth-child(6) {
+        grid-area: span 2 / span 2 / span 2/ span 2;
+    }
+
+
+
+
+}
